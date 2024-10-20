@@ -3,6 +3,9 @@ import { HiOutlineSearch } from "react-icons/hi";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useCollapse } from "react-collapsed";
+import { MdOutlineExpandLess } from "react-icons/md";
+import { MdOutlineExpandMore } from "react-icons/md";
 
 import "./style.scss";
 
@@ -15,9 +18,18 @@ const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showRegister, setRegister] = useState(true);
 
+  const [isExpanded, setExpanded] = useState(false);
+  const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
+
   const openMobileMenu = () => {
     setMobileMenu(true);
     setRegister(false);
+  };
+
+  const collapsableHandler = () => {
+    // Do more stuff with the click event!
+    // Or, set isExpanded conditionally
+    setExpanded(!isExpanded);
   };
 
   const closeMobileMenu = () => {
@@ -49,7 +61,24 @@ const Header = () => {
               <button className="registerBtn">Platform </button>
             </div>
           </li>
-          <li className="menuItem">Features</li>
+          <li className="menuItem">
+            <div className="collapsible">
+              <span>Features</span>
+              {isExpanded ? (
+                <MdOutlineExpandLess onClick={collapsableHandler} />
+              ) : (
+                <MdOutlineExpandMore onClick={collapsableHandler} />
+              )}
+
+              <div {...getCollapseProps()}>
+                <div className="content">
+                  Now you can see the hidden content. <br />
+                  <br />
+                  Click again to hide...
+                </div>
+              </div>
+            </div>
+          </li>
           <li className="menuItem">Pricing</li>
           <li className="menuItem">Help</li>
         </ul>
