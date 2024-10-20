@@ -5,7 +5,10 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+<<<<<<< HEAD
   opacity: 100%;
+=======
+>>>>>>> a27f693c291a78d1ca138b100f4a08945f953e83
 }
 .header .logo {
   margin-top: 20px;
