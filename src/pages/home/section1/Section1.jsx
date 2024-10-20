@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.scss";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
+import ReactPlayer from "react-player/lazy";
 const Section1 = () => {
   return (
     <ContentWrapper>

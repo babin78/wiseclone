@@ -19,6 +19,7 @@
   font-size: 20px;
   color: #454745;
   line-height: 28px;
+  bottom: 200px;
 }
 .section1 .navList {
   display: flex;
