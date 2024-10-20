@@ -1,0 +1,58 @@
+.section1 {
+  z-index: 1;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 100px;
+  text-align: center;
+  .title {
+    font-family: "wise san", inter, sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 50px;
+  }
+  .subTitle {
+    font-family: "wise san", inter, sans-serif;
+    font-size: 20px;
+    color: #454745;
+    line-height: 28px;
+  }
+
+  .navList {
+    display: flex;
+    list-style: none;
+
+    gap: 20px;
+    .navItem {
+      a {
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        color: black;
+
+        width: 150px;
+        height: 50px;
+
+        border: 1px solid rgba(0, 0, 0, 10);
+        border-radius: 20px;
+        padding: 10px;
+        margin: 5px;
+        background-color: transparent;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+      }
+      a.active {
+        background-color: rgba(111, 219, 66, 0.8);
+        &:hover {
+          background-color: rgba(111, 219, 66, 10);
+        }
+      }
+    }
+  }
+}
