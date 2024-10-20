@@ -1,7 +1,7 @@
 import React from "react";
-
+import Section1 from "./section1/Section1";
 function Home() {
-  return <div className="homePage">home</div>;
+  return <Section1 />;
 }
 
 export default Home;

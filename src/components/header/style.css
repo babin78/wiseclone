@@ -1,18 +1,13 @@
 .header {
   position: fixed;
-  width: 100%;
+  width: 95%;
   height: 60px;
   display: flex;
-  align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  animation: mobileMenu 0.3s ease forwards;
-}
-.header .contentWrapper {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 .header .logo {
+  margin-top: 20px;
   cursor: pointer;
 }
 .header .logo img {
@@ -44,97 +39,13 @@
   border: 0;
   border-radius: 20px;
   cursor: pointer;
-  animation: registerButton 0.3s ease alternate-reverse;
+  animation: registerButtonAmin 0.3s ease alternate-reverse;
 }
 .header .lineMenu button:hover {
   background-color: rgb(111, 219, 66);
 }
-.header .menuItems {
-  list-style: none;
-  display: none;
-  align-items: center;
-  gap: 30px;
-  cursor: pointer;
-}
-.header .menuItems .menuItem .navList {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-.header .menuItems .menuItem .navList .navItem a {
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  vertical-align: middle;
-  white-space: nowrap;
-  color: black;
-  width: 150px;
-  height: 50px;
-  outline: 0;
-  border: 0;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 5px;
-}
-.header .menuItems .menuItem .navList .navItem a.active {
-  background-color: rgba(111, 219, 66, 0.8);
-}
-.header .menuItems .menuItem .navList .navItem a.active:hover {
-  background-color: rgb(111, 219, 66);
-}
-.header.mobileView .menuItems {
-  display: flex;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  flex-direction: column;
-  width: 100%;
-  padding: 20px 0;
-  animation: mobileMenu 0.3s ease forwards;
-}
-.header.mobileView .menuItems .menuItem {
-  font-size: 20px;
-  width: 95%;
-  height: auto;
-  padding: 15px 20px;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  outline: 0;
-  border: 0;
-  border-radius: 20px;
-}
-.header.mobileView .menuItems .menuItem:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-.header.mobileView .menuItems .menuItem:first-child:hover {
-  background-color: white;
-}
-.header.mobileView .menuItems .menuItem .collapsible .content {
-  padding: 10px;
-  font-size: 15px;
-}
-.header.mobileView .menuItems .menuItem .collapsible .content span {
-  font-weight: 600;
-  line-height: 26px;
-  color: #0d1f00;
-}
-.header.mobileView .menuItems .menuItem .collapsible .content p {
-  color: hsl(120, 1%, 27%);
-  padding: 0 20px;
-}
 
-@keyframes mobileMenu {
-  0% {
-    transform: translateX(-130%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes registerButton {
+@keyframes registerButtonAmin {
   0% {
     transform: translateX(130%);
   }

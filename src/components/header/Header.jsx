@@ -1,45 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { HiOutlineSearch } from "react-icons/hi";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useCollapse } from "react-collapsed";
-import { MdOutlineExpandLess } from "react-icons/md";
-import { MdOutlineExpandMore } from "react-icons/md";
-
-import "./style.scss";
-
+import MenuPopUP from "../Popup/MenuPopUP";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/favicon.webp";
 
+import "./style.scss";
+
 const Header = () => {
-  const [show, setShow] = useState("top");
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [mobileMenu, setMobileMenu] = useState(false);
+  // const [show, setShow] = useState("top");
+
+  const [showPopup, setShowPopup] = useState(false);
   const [showRegister, setRegister] = useState(true);
 
-  const [isExpanded, setExpanded] = useState(false);
-  const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
-
-  const openMobileMenu = () => {
-    setMobileMenu(true);
+  const openPopup = () => {
+    setShowPopup(true);
     setRegister(false);
   };
 
-  const collapsableHandler = () => {
-    // Do more stuff with the click event!
-    // Or, set isExpanded conditionally
-    setExpanded(!isExpanded);
-  };
-
-  const closeMobileMenu = () => {
-    setMobileMenu(false);
+  const closePopup = () => {
+    setShowPopup(false);
     setRegister(true);
   };
 
   return (
-    <header className={`header ${mobileMenu ? "mobileView" : ""} `}>
-      <ContentWrapper>
+    <ContentWrapper>
+      <header className={`header `}>
         <div className="logo">
           <img src={logo} alt="" />
         </div>
@@ -47,59 +33,15 @@ const Header = () => {
         <div className="lineMenu">
           {showRegister && <button className="registerBtn">Register</button>}
 
-          {mobileMenu ? (
-            <VscChromeClose onClick={closeMobileMenu} />
+          {showPopup ? (
+            <VscChromeClose onClick={closePopup} />
           ) : (
-            <SlMenu onClick={openMobileMenu} />
+            <SlMenu onClick={openPopup} />
           )}
         </div>
-        <ul className="menuItems">
-          <li className="menuItem">
-            <ul className="navList">
-              <li className="navItem">
-                <a className="navBTN active" href="">
-                  Personal
-                </a>
-              </li>
-              <li className="navItem">
-                <a className="navBTN" href="">
-                  Bussiness
-                </a>
-              </li>
-              <li className="navItem">
-                <a className="navBTN" href="">
-                  Platform
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="menuItem">
-            <div className="collapsible">
-              <span>Features</span>
-              {isExpanded ? (
-                <MdOutlineExpandLess onClick={collapsableHandler} />
-              ) : (
-                <MdOutlineExpandMore onClick={collapsableHandler} />
-              )}
-
-              <div {...getCollapseProps()}>
-                <div className="content">
-                  <span>Send Money</span> <br />
-                  <p>
-                    Make a one-off payment. You'll get the real exchange rate
-                    with the low fee we're known for. Send large amounts
-                  </p>
-                  <br />
-                  <span>Send large amount</span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li className="menuItem">Pricing</li>
-          <li className="menuItem">Help</li>
-        </ul>
-      </ContentWrapper>
-    </header>
+      </header>
+      {showPopup && <MenuPopUP show={showPopup} />}
+    </ContentWrapper>
   );
 };
 
