@@ -72,9 +72,13 @@ const Header = () => {
 
               <div {...getCollapseProps()}>
                 <div className="content">
-                  Now you can see the hidden content. <br />
+                  <span>Send Money</span> <br />
+                  <p>
+                    Make a one-off payment. You'll get the real exchange rate
+                    with the low fee we're known for. Send large amounts
+                  </p>
                   <br />
-                  Click again to hide...
+                  <span>Send large amount</span>
                 </div>
               </div>
             </div>

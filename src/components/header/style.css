@@ -92,22 +92,35 @@
 }
 .header.mobileView .menuItems .menuItem {
   font-size: 20px;
-  width: 100%;
+  width: 95%;
   height: auto;
   padding: 15px 20px;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  outline: 0;
+  border: 0;
+  border-radius: 20px;
+}
+.header.mobileView .menuItems .menuItem:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.header.mobileView .menuItems .menuItem:first-child .header.mobileView .menuItems .menuItem:hover {
+  background-color: white;
 }
 .header.mobileView .menuItems .menuItem .collapsible .content {
-  padding: 6px;
-  background-color: #eeeeee;
+  padding: 10px;
+  font-size: 15px;
 }
-.header.mobileView .menuItems .menuItem .collapsible .header {
-  background-color: #dddddd;
-  padding: 6px;
-  cursor: pointer;
+.header.mobileView .menuItems .menuItem .collapsible .content span {
+  font-weight: 600;
+  line-height: 26px;
+  color: #0d1f00;
+}
+.header.mobileView .menuItems .menuItem .collapsible .content p {
+  color: hsl(120, 1%, 27%);
+  padding: 0 20px;
 }
 
 @keyframes mobileMenu {

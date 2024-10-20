@@ -109,22 +109,36 @@
       animation: mobileMenu 0.3s ease forwards;
       .menuItem {
         font-size: 20px;
-        width: 100%;
+        width: 95%;
         height: auto;
         padding: 15px 20px;
         margin: 0;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        outline: 0;
+        border: 0;
+        border-radius: 20px;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+        &:first-child &:hover {
+          background-color: white;
+        }
 
         .collapsible .content {
-          padding: 6px;
-          background-color: #eeeeee;
-        }
-        .collapsible .header {
-          background-color: #dddddd;
-          padding: 6px;
-          cursor: pointer;
+          padding: 10px;
+          font-size: 15px;
+          span {
+            font-weight: 600;
+            line-height: 26px;
+            color: #0d1f00;
+          }
+
+          p {
+            color: hsl(120, 1%, 27%);
+            padding: 0 20px;
+          }
         }
       }
     }
