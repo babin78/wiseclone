@@ -56,28 +56,31 @@
   gap: 30px;
   cursor: pointer;
 }
-.header .menuItems .menuItem .menuFirstButtons {
+.header .menuItems .menuItem .navList {
   display: flex;
+  list-style: none;
   gap: 20px;
 }
-.header .menuItems .menuItem .menuFirstButtons .registerBtn {
+.header .menuItems .menuItem .navList .navItem a {
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
-  width: 100px;
-  height: 30px;
+  color: black;
+  width: 150px;
+  height: 50px;
   outline: 0;
   border: 0;
   border-radius: 20px;
-  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
 }
-.header .menuItems .menuItem .menuFirstButtons .registerBtn:first-child {
+.header .menuItems .menuItem .navList .navItem a.active {
   background-color: rgba(111, 219, 66, 0.8);
 }
-.header .menuItems .menuItem .menuFirstButtons .registerBtn:first-child, .header .menuItems .menuItem .menuFirstButtons .registerBtn.hover {
+.header .menuItems .menuItem .navList .navItem a.active:hover {
   background-color: rgb(111, 219, 66);
 }
 .header.mobileView .menuItems {
@@ -106,7 +109,7 @@
 .header.mobileView .menuItems .menuItem:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.header.mobileView .menuItems .menuItem:first-child .header.mobileView .menuItems .menuItem:hover {
+.header.mobileView .menuItems .menuItem:first-child:hover {
   background-color: white;
 }
 .header.mobileView .menuItems .menuItem .collapsible .content {

@@ -55,11 +55,23 @@ const Header = () => {
         </div>
         <ul className="menuItems">
           <li className="menuItem">
-            <div className="menuFirstButtons">
-              <button className="registerBtn active">Personal</button>
-              <button className="registerBtn">Business</button>
-              <button className="registerBtn">Platform </button>
-            </div>
+            <ul className="navList">
+              <li className="navItem">
+                <a className="navBTN active" href="">
+                  Personal
+                </a>
+              </li>
+              <li className="navItem">
+                <a className="navBTN" href="">
+                  Bussiness
+                </a>
+              </li>
+              <li className="navItem">
+                <a className="navBTN" href="">
+                  Platform
+                </a>
+              </li>
+            </ul>
           </li>
           <li className="menuItem">
             <div className="collapsible">
