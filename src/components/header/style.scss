@@ -1,11 +1,38 @@
 @import "../../mixings.scss";
 
+
+
+
+.tooltiptext {
+  visibility: hidden;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 200;
+  width:30%;
+  top: 60px;
+  //left: 70%;
+  //margin-left: -60px;
+  height: 400px;
+  background-color: white;
+  opacity: 100%;
+  z-index:150;
+}
+
+.toolTip:hover{
+ 
+  .tooltiptext {
+    visibility: visible;
+  }
+}
+
 .header {
   position: fixed;
   width: 95%;
   height: 60px;
   display: flex;
-
+  background-color: white;
+  opacity: 100%;
+ z-index: 22;
   justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
@@ -16,7 +43,63 @@
       height: 30px;
     }
   }
+  
 
+  .navList {
+    margin-top: 20px;
+    @include lg{
+      display: flex;
+    }
+    display:none;
+    list-style: none;
+   
+    gap: 20px;
+
+    .navItem {
+      a {
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        color: black;
+
+        width: 150px;
+        height: 30px;
+        outline: 0;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+        padding:5px  10px;
+        //margin:auto  5px;
+        //position:relative;
+        //bottom: 0px;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+      a.active {
+        background-color: rgba(111, 219, 66, 0.8);
+        &:hover {
+          background-color: rgba(111, 219, 66, 10);
+        }
+      }
+    }
+  }
+
+  .hamBurger{
+    margin-top: 20px;
+    @include lg{
+      
+      svg {
+        display: none;
+      }
+    }
+    
+    display:inline-block;
+    
+  }
   .lineMenu {
     display: flex;
     align-items: center;
@@ -27,6 +110,12 @@
       height: 30px;
       width: 30px;
       cursor: pointer;
+
+      @include lg{
+        display: none;
+      }
+      display:flex;
+  
     }
 
     button {
@@ -50,7 +139,51 @@
       }
     }
   }
+
+  .menuItems {
+    list-style: none;
+    @include lg{
+      display: flex;
+    }
+    display:none;
+    
+    flex-direction: row;
+    gap:20px;
+    margin-top: 20px;
+    cursor: pointer;
+    
+    
+    .menuItem {
+            a {
+
+              font-size: 20px;
+            margin-bottom: 30px;
+            padding: 10px;
+            width: 80%;
+            border-radius: 20px;
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.1);
+            }
+            
+            
+            
+
+      }
+      
+
+
+    }
+  }
+  
+
+
+
 }
+
+
 
 @keyframes registerButtonAmin {
   0% {
@@ -60,3 +193,5 @@
     transform: translateX(0);
   }
 }
+
+
